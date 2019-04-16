@@ -1,0 +1,17 @@
+.\flash\main.o: Main\main.c
+.\flash\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\flash\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\flash\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\flash\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\flash\main.o: .\LPC1700\Core_CM3\lpc17xx.h
+.\flash\main.o: .\LPC1700\Core_CM3\core_cm3.h
+.\flash\main.o: .\LPC1700\Core_CM3\system_LPC17xx.h
+.\flash\main.o: .\LPC1700\RTC\lpc17xx_rtc.h
+.\flash\main.o: .\FatFs\integer.h
+.\flash\main.o: .\FatFs\diskio.h
+.\flash\main.o: .\FatFs\ff.h
+.\flash\main.o: .\FatFs\ffconf.h
+.\flash\main.o: ..\Music_play_pause\delay.h
+.\flash\main.o: ..\Music_play_pause\uart.h
+.\flash\main.o: ..\Music_play_pause\stdutils.h

@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\ram\system_lpc17xx.o"
+".\ram\startup_lpc17xx.o"
+".\ram\lpc17xx_spi.o"
+".\ram\lpc17xx_sd.o"
+".\ram\lpc17xx_uart.o"
+".\ram\lpc17xx_rtc.o"
+".\ram\monitor.o"
+".\ram\ff.o"
+".\ram\ccsbcs.o"
+".\ram\main.o"
+--strict --scatter ".\RAM\LPC1700_FatFs.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\RAM\LPC1700_FatFs.map" -o .\RAM\LPC1700_FatFs.axf

@@ -1,0 +1,17 @@
+--cpu Cortex-M3
+".\flash\system_lpc17xx.o"
+".\flash\startup_lpc17xx.o"
+".\flash\lpc17xx_spi.o"
+".\flash\lpc17xx_sd.o"
+".\flash\lpc17xx_uart.o"
+".\flash\lpc17xx_rtc.o"
+".\flash\monitor.o"
+".\flash\ff.o"
+".\flash\ccsbcs.o"
+".\flash\main.o"
+".\flash\delay.o"
+".\flash\uart.o"
+--strict --scatter ".\Flash\LPC1700_FatFs.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Flash\LPC1700_FatFs.map" -o .\Flash\LPC1700_FatFs.axf
