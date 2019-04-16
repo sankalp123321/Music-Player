@@ -26,6 +26,7 @@ bool isBeingRead = true;
 #define LED1OFF() do {LPC_GPIO0 -> FIOCLR |= (1<<22);}while (0)
 
 static FIL WAVfile;
+static DWORD filesize;
 #define PRESCALE (17) //25000 PCLK clock cycles to increment TC by 1 
 
 void initTimer0();
@@ -251,6 +252,7 @@ int main (){
 //	 for(i=0;i<5;i++) result = f_write(&file, buf, sizeof buf, &s1);//file type.	
 //	 result = f_close(&file);
     result = f_open(&file,"kha.wav",FA_READ);
+		filesize = file.fsize;
 UART_Printf("File Open : %d\r\n",result);
 
 	 readBuffer(false, false);
@@ -353,7 +355,7 @@ void TIMER0_IRQHandler(void) //Use extern "C" so C++ can link it properly, for C
 		}
 	}*/
 	
-	if(counter < 10000000){
+	if(counter < filesize){
 		if(already){
 			//UART_Printf("playing buffer 1");
 			Vout(buffer[bufferPos]);
