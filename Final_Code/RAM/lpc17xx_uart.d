@@ -1,0 +1,9 @@
+.\ram\lpc17xx_uart.o: LPC1700\UART\lpc17xx_uart.c
+.\ram\lpc17xx_uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\ram\lpc17xx_uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\ram\lpc17xx_uart.o: LPC1700\UART\lpc17xx_uart.h
+.\ram\lpc17xx_uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\ram\lpc17xx_uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\ram\lpc17xx_uart.o: .\LPC1700\Core_CM3\lpc17xx.h
+.\ram\lpc17xx_uart.o: .\LPC1700\Core_CM3\core_cm3.h
+.\ram\lpc17xx_uart.o: .\LPC1700\Core_CM3\system_LPC17xx.h
