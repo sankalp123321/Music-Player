@@ -27,6 +27,7 @@ struct formDisplayString str;
 int screen;
 int cursorPos = 0;
 bool shouldParse = true;
+bool firstTime = true;
 /* LED indicator */
 #define LED1ON()  do {LPC_GPIO0 -> FIOSET |= (1<<22);}while (0)
 #define LED1OFF() do {LPC_GPIO0 -> FIOCLR |= (1<<22);}while (0)
@@ -92,12 +93,12 @@ UART_Printf("%d", fd->_durationMin);
 UART_Printf(":");
 UART_Printf("%d", fd->_durationSec);
 //	 strcat(finalString, temp);
-UART_Printf(";playStatus:");
+UART_Printf(";playing:");
 UART_Printf(fd->playStatus);
 UART_Printf(";cursorPos:");
 UART_Printf("%d", fd->_cursorPos);
 //	 strcat(finalString, temp);
-UART_Printf(";#\r\n");
+UART_Printf(";#");
 	 
 	 return finalString;
  }
@@ -251,9 +252,9 @@ void initExternalInterrupt(){
 	LPC_SC->EXTPOLAR = (1<<0);	//configure EINT0 as falling edge;
 	
 	NVIC_SetPriority(EINT0_IRQn,1);
-	UART_Printf("b");
+	//UART_Printf("b");
 	NVIC_EnableIRQ(EINT0_IRQn);
-	UART_Printf("c");
+	//UART_Printf("c");
 }
 
 void EINT0_IRQHandler(void)
@@ -272,7 +273,11 @@ void EINT0_IRQHandler(void)
 		}
 		//UART_Printf("%s %s \r\n", str._currentlyPlaying, str.playStatus);//parseString(&str));
 		//UART_Printf(parseString(&str));
-		shouldParse = false;
+		if(firstTime){
+			shouldParse = true;
+			firstTime = false;
+		}
+		else shouldParse = false;
 }
 void EINT1_IRQHandler(void){
 	
@@ -371,13 +376,15 @@ int main (){
 		str._songs[ctr] = pointer->file.fname;
 		pointer = pointer->next;
 	}
+	str._songs[3] = "gupta.chutiya";
+	str._songs[4] = "madarchod.wav";
 	pointer = first;
 	str._currentlyPlaying = pointer->file.fname;
   str._durationMin = 4;
 	str._durationSec = 15;
 	str.playStatus = "Playing";
 	str._cursorPos = 0;
-	UART_TxString(parseString(&str));
+	parseString(&str);
 	pointer = pointer->next;
 	pointer = pointer->next;
   result = f_open(&file,pointer->file.fname,FA_READ);
@@ -423,7 +430,8 @@ int main (){
 //		if(ch == 'p')
 //			NVIC_DisableIRQ(TIMER0_IRQn);
 		if(!shouldParse){
-			UART_TxString(parseString(&str));
+			//UART_TxString(parseString(&str));
+			parseString(&str);
 			shouldParse = true;
 		}
 	}
