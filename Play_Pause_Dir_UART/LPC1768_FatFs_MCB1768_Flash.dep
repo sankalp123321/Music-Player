@@ -1,0 +1,83 @@
+Dependencies for Project 'LPC1768_FatFs', Target 'MCB1768_Flash': (DO NOT MODIFY !)
+F (.\LPC1700\Core_CM3\system_LPC17xx.c)(0x4B2B6012)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\system_lpc17xx.o --omf_browse .\flash\system_lpc17xx.crf --depend .\flash\system_lpc17xx.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (LPC1700\Core_CM3\LPC17xx.h)(0x4B2F459C)
+I (LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+F (.\LPC1700\Core_CM3\startup_LPC17xx.s)(0x4B2B603E)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP--list .\flash\startup_lpc17xx.lst --xref -o .\flash\startup_lpc17xx.o --depend .\flash\startup_lpc17xx.d)
+F (.\LPC1700\SPI_SD\LPC17xx_spi.c)(0x4B694E82)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\lpc17xx_spi.o --omf_browse .\flash\lpc17xx_spi.crf --depend .\flash\lpc17xx_spi.d)
+I (.\LPC1700\Core_CM3\LPC17xx.H)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+I (LPC1700\SPI_SD\LPC17xx_spi.h)(0x4B2F3AFC)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7E87C)
+F (.\LPC1700\SPI_SD\LPC17xx_sd.c)(0x4B695606)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\lpc17xx_sd.o --omf_browse .\flash\lpc17xx_sd.crf --depend .\flash\lpc17xx_sd.d)
+I (.\FatFs\diskio.h)(0x4B2356CE)
+I (.\FatFs\integer.h)(0x49CFA760)
+I (LPC1700\SPI_SD\LPC17xx_spi.h)(0x4B2F3AFC)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7E87C)
+I (LPC1700\SPI_SD\LPC17xx_sd.h)(0x4B287A14)
+F (.\LPC1700\UART\lpc17xx_uart.c)(0x4B694EAE)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\lpc17xx_uart.o --omf_browse .\flash\lpc17xx_uart.crf --depend .\flash\lpc17xx_uart.d)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7E87C)
+I (LPC1700\UART\lpc17xx_uart.h)(0x4B2F44BC)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\lpc17xx.h)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+F (.\LPC1700\RTC\lpc17xx_rtc.c)(0x4B2F447A)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\lpc17xx_rtc.o --omf_browse .\flash\lpc17xx_rtc.crf --depend .\flash\lpc17xx_rtc.d)
+I (.\LPC1700\Core_CM3\LPC17xx.H)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+I (LPC1700\RTC\lpc17xx_rtc.h)(0x4B2F449C)
+F (.\LPC1700\Utility\monitor.c)(0x4B6950FC)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\monitor.o --omf_browse .\flash\monitor.crf --depend .\flash\monitor.d)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C7E87C)
+I (LPC1700\Utility\monitor.h)(0x4B695136)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (.\LPC1700\UART\lpc17xx_uart.h)(0x4B2F44BC)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7E87C)
+F (.\FatFs\ff.c)(0x4AEF2DB6)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\ff.o --omf_browse .\flash\ff.crf --depend .\flash\ff.d)
+I (FatFs\ff.h)(0x4AEF2DC4)
+I (FatFs\integer.h)(0x49CFA760)
+I (FatFs\ffconf.h)(0x5CAB9D22)
+I (FatFs\diskio.h)(0x4B2356CE)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C7E87C)
+F (.\FatFs\option\ccsbcs.c)(0x4A33C2AA)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\ccsbcs.o --omf_browse .\flash\ccsbcs.crf --depend .\flash\ccsbcs.d)
+I (FatFs\option\../ff.h)(0x4AEF2DC4)
+I (FatFs\option\../integer.h)(0x49CFA760)
+I (FatFs\option\../ffconf.h)(0x5CAB9D22)
+F (.\Main\main.c)(0x5CAC5DF0)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I..\SD -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\main.o --omf_browse .\flash\main.crf --depend .\flash\main.d)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C7E87C)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\lpc17xx.h)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+I (.\LPC1700\RTC\lpc17xx_rtc.h)(0x4B2F449C)
+I (.\FatFs\integer.h)(0x49CFA760)
+I (.\FatFs\diskio.h)(0x4B2356CE)
+I (.\FatFs\ff.h)(0x4AEF2DC4)
+I (.\FatFs\ffconf.h)(0x5CAB9D22)
+I (..\SD\delay.h)(0x5CAB864D)
+I (..\SD\uart.h)(0x5CAB8ADF)
+I (..\SD\stdutils.h)(0x5CAB8B57)
+F (.\delay.c)(0x5CAB864B)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\delay.o --omf_browse .\flash\delay.crf --depend .\flash\delay.d)
+I (.\LPC1700\Core_CM3\lpc17xx.h)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+I (delay.h)(0x5CAB864D)
+F (.\uart.c)(0x5CAB8C09)(-c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork -I.\FatFs -I.\LPC1700\Core_CM3 -I.\LPC1700\UART -I.\LPC1700\RTC -I.\LPC1700\Utility-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP-o .\flash\uart.o --omf_browse .\flash\uart.crf --depend .\flash\uart.d)
+I (.\LPC1700\Core_CM3\LPC17xx.h)(0x4B2F459C)
+I (.\LPC1700\Core_CM3\core_cm3.h)(0x4A161686)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7E87C)
+I (.\LPC1700\Core_CM3\system_LPC17xx.h)(0x4A3F3A1C)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C7E87C)
+I (uart.h)(0x5CAB8ADF)
+I (stdutils.h)(0x5CAB8B57)

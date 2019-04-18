@@ -1,0 +1,12 @@
+.\ram\main.o: Main\main.c
+.\ram\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\ram\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\ram\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\ram\main.o: .\LPC1700\Core_CM3\lpc17xx.h
+.\ram\main.o: .\LPC1700\Core_CM3\core_cm3.h
+.\ram\main.o: .\LPC1700\Core_CM3\system_LPC17xx.h
+.\ram\main.o: .\LPC1700\RTC\lpc17xx_rtc.h
+.\ram\main.o: .\FatFs\integer.h
+.\ram\main.o: .\FatFs\diskio.h
+.\ram\main.o: .\FatFs\ff.h
+.\ram\main.o: .\FatFs\ffconf.h

@@ -1,0 +1,28 @@
+*** Creating Trace Output File '.\Flash\LPC1700_FatFs.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\flash\system_lpc17xx.o"'
+### List of Objects: adding '".\flash\startup_lpc17xx.o"'
+### List of Objects: adding '".\flash\lpc17xx_spi.o"'
+### List of Objects: adding '".\flash\lpc17xx_sd.o"'
+### List of Objects: adding '".\flash\lpc17xx_uart.o"'
+### List of Objects: adding '".\flash\lpc17xx_rtc.o"'
+### List of Objects: adding '".\flash\monitor.o"'
+### List of Objects: adding '".\flash\ff.o"'
+### List of Objects: adding '".\flash\ccsbcs.o"'
+### List of Objects: adding '".\flash\main.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\flash\system_lpc17xx.o" ".\flash\startup_lpc17xx.o" ".\flash\lpc17xx_spi.o" ".\flash\lpc17xx_sd.o" ".\flash\lpc17xx_uart.o" ".\flash\lpc17xx_rtc.o" ".\flash\monitor.o" ".\flash\ff.o" ".\flash\ccsbcs.o" ".\flash\main.o" --strict --scatter ".\Flash\LPC1700_FatFs.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Flash\LPC1700_FatFs.map" -o ".\Flash\LPC1700_FatFs.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Flash\LPC1700_FatFs.axf'
+### ADS-LD Command File: '.\Flash\LPC1700_FatFs.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Flash\LPC1700_FatFs.lnp', Handle=0x0000020C
+### Writing '.lnp' file
+### ADS-LD Command file '.\Flash\LPC1700_FatFs.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

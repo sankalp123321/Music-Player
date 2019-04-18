@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ankur Deshmukh, Vishwakarma Institute of Technology, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.25.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+    Target DLL: coocox-agdi.dll
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+D:\LPC1768\Play_Pause_Dir_UART\LPC1768_FatFs.uvprojx
+Project File Date:  04/18/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'MCB1768_Flash'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling monitor.c...
+compiling LPC17xx_sd.c...
+compiling LPC17xx_spi.c...
+compiling lpc17xx_rtc.c...
+compiling lpc17xx_uart.c...
+LPC1700\UART\lpc17xx_uart.c(62): warning:  #29-D: expected an expression
+  #elif
+LPC1700\UART\lpc17xx_uart.c: 1 warning, 0 errors
+compiling ccsbcs.c...
+compiling List.c...
+List.h(9): warning:  #1-D: last line of file ends without a newline
+  struct List *add_last(struct List *last, FILINFO data);
+List.c(6): warning:  #223-D: function "malloc" declared implicitly
+  	pointer = (struct List*)malloc(sizeof(struct List));
+List.c(15): warning:  #1-D: last line of file ends without a newline
+  }
+List.c: 3 warnings, 0 errors
+compiling delay.c...
+compiling uart.c...
+compiling main.c...
+..\Play_Pause_Dir\List.h(9): warning:  #1-D: last line of file ends without a newline
+  struct List *add_last(struct List *last, FILINFO data);
+Main\main.c(38): warning:  #1295-D: Deprecated declaration initTimer0 - give arg types
+  void initTimer0();
+Main\main.c(56): warning:  #177-D: variable "temp"  was declared but never referenced
+  	 char temp[20][20];
+Main\main.c(57): warning:  #177-D: variable "t"  was declared but never referenced
+  	 char* t[20];
+Main\main.c(228): warning:  #550-D: parameter "readNextBufferOne"  was set but never used
+  void readBuffer(bool readNextBufferOne, bool readNextBufferTwo){
+Main\main.c(228): warning:  #550-D: parameter "readNextBufferTwo"  was set but never used
+  void readBuffer(bool readNextBufferOne, bool readNextBufferTwo){
+Main\main.c(336): warning:  #177-D: variable "temp"  was declared but never referenced
+  			char* temp;
+Main\main.c(308): warning:  #177-D: variable "buf"  was declared but never referenced
+  	char buf[40]="SD card experiment\r\n";
+Main\main.c(17): warning:  #177-D: variable "ByteCounter"  was declared but never referenced
+  static uint32_t ByteCounter;
+Main\main.c(22): warning:  #177-D: variable "bufferPos1"  was declared but never referenced
+  static int bufferPos1 = 0;
+Main\main.c(34): warning:  #177-D: variable "WAVfile"  was declared but never referenced
+  static FIL WAVfile;
+Main\main.c(147): warning:  #177-D: variable "wavHeader"  was declared but never referenced
+  static WAV_Header_TypeDef wavHeader;
+Main\main.c: 12 warnings, 0 errors
+compiling ff.c...
+FatFs\ff.c(1127): warning:  #111-D: statement is unreachable
+  			w = (w << 8) + b;
+FatFs\ff.c: 1 warning, 0 errors
+linking...
+Program Size: Code=16196 RO-data=1712 RW-data=76 ZI-data=6036  
+FromELF: creating hex file...
+".\Flash\LPC1700_FatFs.axf" - 0 Error(s), 17 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.LPC1700_DFP.2.5.0.pack
+                Keil.LPC1700_DFP.2.5.0
+                NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700 and LPC1788-32
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_MCB1768_Flash
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
