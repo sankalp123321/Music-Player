@@ -267,7 +267,34 @@ void EINT0_IRQHandler(void)
 {
     LPC_SC->EXTINT = (1<<0);  /* Clear Interrupt Flag */
 //    LPC_GPIO0->FIOPIN ^= (1<< LED1);   /* Toggle the LED1 everytime INTR0 is generated */
-	if(str._screen == 0)
+//	if(str._screen == 0 || str._screen == 1)
+//	{
+//		if(isEnabled){
+//			NVIC_DisableIRQ(TIMER0_IRQn);
+//			isEnabled = false;
+//			str.playStatus = "Paused";
+//		}
+//		else{
+//			NVIC_EnableIRQ(TIMER0_IRQn);
+//			isEnabled = true;
+//			str.playStatus = "Playing";
+//		}
+//		//UART_Printf("%s %s \r\n", str._currentlyPlaying, str.playStatus);//parseString(&str));
+//		//UART_Printf(parseString(&str));
+//	}
+	if(str._screen == 1)
+	{
+		result = f_open(&file,pointer->file.fname,FA_READ);
+		filesize = file.fsize;
+		str._currentlyPlaying = pointer->file.fname;
+		str._screen = 0;
+		counter = 0;
+		str.playStatus = "Playing";
+		isEnabled = false;
+		memset(buffer,0,sizeof buffer);
+		memset(buffer1,0,sizeof buffer1);
+	}
+	if(str._screen == 0 || str._screen == 1)
 	{
 		if(isEnabled){
 			NVIC_DisableIRQ(TIMER0_IRQn);
@@ -281,16 +308,6 @@ void EINT0_IRQHandler(void)
 		}
 		//UART_Printf("%s %s \r\n", str._currentlyPlaying, str.playStatus);//parseString(&str));
 		//UART_Printf(parseString(&str));
-	}
-	if(str._screen == 1)
-	{
-		result = f_open(&file,pointer->file.fname,FA_READ);
-		filesize = file.fsize;
-		str._currentlyPlaying = pointer->file.fname;
-		str._screen = 0;
-		counter = 0;
-		memset(buffer,0,sizeof buffer);
-		memset(buffer1,0,sizeof buffer1);
 	}
 		if(firstTime0){
 			shouldParse = true;
@@ -317,7 +334,7 @@ void EINT1_IRQHandler(void){
 	{
 		pointer = pointer->previous;
 		if(str._cursorPos == 0)
-			str._cursorPos = 5;
+			str._cursorPos = 4;
 		else str._cursorPos--;
 	}
 	if(firstTime2){
@@ -332,7 +349,7 @@ void EINT3_IRQHandler(void){
 	if(str._screen == 1)
 	{
 		pointer = pointer->next;
-		if(str._cursorPos == 5)
+		if(str._cursorPos == 4)
 			str._cursorPos = 0;
 		else str._cursorPos++;
 	}
@@ -430,16 +447,12 @@ int main (){
 		str._songs[ctr] = pointer->file.fname;
 		pointer = pointer->next;
 	}
-	str._songs[3] = "gupta.chutiya";
-	str._songs[4] = "madarchod.wav";
 	pointer = first;
-	pointer = pointer->next;
-	pointer = pointer->next;
 	str._currentlyPlaying = pointer->file.fname;
   str._durationMin = 4;
 	str._durationSec = 15;
 	str.playStatus = "Playing";
-	str._cursorPos = 2;
+	str._cursorPos = 0;
 	parseString(&str);
   result = f_open(&file,pointer->file.fname,FA_READ);
 	filesize = file.fsize;
