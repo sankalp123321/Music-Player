@@ -20,7 +20,6 @@ bool initRead = false;
 bool isEnabled = false;
 static int bufferPos = 0;
 static int bufferPos1 = 0;
-bool buffOneAck = true, buffTwoAck = false;
 bool isBeingRead = true;
 struct List *first=0,*last=0,*pointer;
 struct formDisplayString str;
@@ -58,53 +57,39 @@ bool shouldRead = 0;
  };
 
  char* parseString(struct formDisplayString *fd){
-	 char temp[20][20];
-	 char* t[20];
-	 char* finalString ;
-	 UART_Printf("Screen:%d", fd->_screen);
-	 //sprintf(temp[0], "%d", fd->_screen);
-	 //t[0] = temp[0];
-//	 
-	 //UART_Printf("screen:");
-	 //strcat(finalString, temp[0]); 
-//	 
-	 UART_Printf(";time:");
-	 UART_Printf("%d", fd->_hour);
-	// t[1] = temp[1];
-	 //strcat(finalString, temp[1]);
-//
-UART_Printf(":");
-	 UART_Printf("%d", fd->_min);
-//	 strcat(finalString, temp);
-UART_Printf(";battery:");
-UART_Printf("%d", fd->_battery);
-//	 strcat(finalString, temp);
-UART_Printf(";");
-UART_Printf(fd->_songs[0]);
-UART_Printf(",");
-UART_Printf(fd->_songs[1]);
-UART_Printf(",");	 
-UART_Printf(fd->_songs[2]);
-UART_Printf(",");
-UART_Printf(fd->_songs[3]);
-UART_Printf(",");	 
-UART_Printf(fd->_songs[4]);
-UART_Printf(";currentlyplaying:");
-UART_Printf(fd->_currentlyPlaying);
-UART_Printf(";duration:");
-UART_Printf("%d", fd->_durationMin);
-//	 strcat(finalString, temp);
-UART_Printf(":");
-UART_Printf("%d", fd->_durationSec);
-//	 strcat(finalString, temp);
-UART_Printf(";playing:");
-UART_Printf(fd->playStatus);
-UART_Printf(";cursorPos:");
-UART_Printf("%d", fd->_cursorPos);
-//	 strcat(finalString, temp);
-UART_Printf(";#");
+	char temp[20][20];
+	char* t[20];
+	char* finalString ;
+	UART_Printf("Screen:%d", fd->_screen);
 	 
-	 return finalString;
+	UART_Printf(";time:");
+	UART_Printf("%d", fd->_hour);
+	UART_Printf(":");
+	UART_Printf("%d", fd->_min);
+	UART_Printf(";battery:");
+	UART_Printf("%d", fd->_battery);
+	UART_Printf(";");
+	UART_Printf(fd->_songs[0]);
+	UART_Printf(",");
+	UART_Printf(fd->_songs[1]);
+	UART_Printf(",");	 
+	UART_Printf(fd->_songs[2]);
+	UART_Printf(",");
+	UART_Printf(fd->_songs[3]);
+	UART_Printf(",");	 
+	UART_Printf(fd->_songs[4]);
+	UART_Printf(";currentlyplaying:");
+	UART_Printf(fd->_currentlyPlaying);
+	UART_Printf(";duration:");
+	UART_Printf("%d", fd->_durationMin);
+	UART_Printf(":");
+	UART_Printf("%d", fd->_durationSec);
+	UART_Printf(";playing:");
+	UART_Printf(fd->playStatus);
+	UART_Printf(";cursorPos:");
+	UART_Printf("%d", fd->_cursorPos);
+	UART_Printf(";#"); 
+	return finalString;
  }
 	
  
@@ -124,7 +109,7 @@ void SysTick_Handler (void)
 	// Disk timer process to be called every 10 ms
 	if ( prescale_disk_io++ >=10 ) {
 		prescale_disk_io = 0;
-//		disk_timerproc(); // <- Disk timer process to be called every 10 ms 
+	//disk_timerproc(); // <- Disk timer process to be called every 10 ms 
 	}
 }
 
@@ -151,15 +136,6 @@ typedef struct
 /** Wav header. Global as it is used in callbacks. */
 static WAV_Header_TypeDef wavHeader;
 
-/*void pingPongBUffer(){
-	
-	long int totalFileSize = 0;
-	FRESULT result;
-	FIL file;
-	result = f_open(&file, "END.wav", FA_READ);
-	f_read(&WAVfile, buffer, sizeof buffer, &bytes_read);
-	ByteCounter +=  bytes_read;
-}*/
 
 void Vout(uint8_t v) {
 	LPC_DAC->DACR = v <<6;
@@ -266,23 +242,7 @@ void initExternalInterrupt(){
 void EINT0_IRQHandler(void)
 {
     LPC_SC->EXTINT = (1<<0);  /* Clear Interrupt Flag */
-//    LPC_GPIO0->FIOPIN ^= (1<< LED1);   /* Toggle the LED1 everytime INTR0 is generated */
-//	if(str._screen == 0 || str._screen == 1)
-//	{
-//		if(isEnabled){
-//			NVIC_DisableIRQ(TIMER0_IRQn);
-//			isEnabled = false;
-//			str.playStatus = "Paused";
-//		}
-//		else{
-//			NVIC_EnableIRQ(TIMER0_IRQn);
-//			isEnabled = true;
-//			str.playStatus = "Playing";
-//		}
-//		//UART_Printf("%s %s \r\n", str._currentlyPlaying, str.playStatus);//parseString(&str));
-//		//UART_Printf(parseString(&str));
-//	}
-	if(str._screen == 1)
+    if(str._screen == 1)
 	{
 		result = f_open(&file,pointer->file.fname,FA_READ);
 		filesize = file.fsize;
@@ -306,8 +266,6 @@ void EINT0_IRQHandler(void)
 			isEnabled = true;
 			str.playStatus = "Playing";
 		}
-		//UART_Printf("%s %s \r\n", str._currentlyPlaying, str.playStatus);//parseString(&str));
-		//UART_Printf(parseString(&str));
 	}
 		if(firstTime0){
 			shouldParse = true;
@@ -379,9 +337,6 @@ bool isWAV(FILINFO fileInfo)
 
 DWORD maxFileSize = 0;
 bool already, readit;
-char c[1024];
-char* l;
-char ch;
 int number_of_songs;
 int main (){
 	
@@ -389,7 +344,6 @@ int main (){
 	//int i = 0;
 	//int k = 0;
 	
-	int ctr;
 	already = true;
 	readit = true;
 	IoInit(); 
@@ -437,11 +391,6 @@ int main (){
 	str._battery = 42;
 	str._hour = 2;
 	str._min = 15;
-//	str._songs[0] = "s1";
-//	str._songs[1] = "s2";
-//	str._songs[2] = "s3";
-//	str._songs[3] = "s4";
-//	str._songs[4] = "s5";
 	for(ctr = 0; ctr < number_of_songs; ctr++)
 	{
 		str._songs[ctr] = pointer->file.fname;
@@ -456,7 +405,6 @@ int main (){
 	parseString(&str);
   result = f_open(&file,pointer->file.fname,FA_READ);
 	filesize = file.fsize;
-//	UART_Printf("File Open : %d\r\n",result);
 
 	readBuffer(false, false);
 	
@@ -466,27 +414,15 @@ int main (){
 			if(!already){
 				//Read chunk into buffer A
 				memset(buffer, 0, sizeof buffer);
-				//result = f_lseek(&file, counter + ftell(&file));
 				result = f_read(&file, buffer, sizeof buffer, &s1);
-//				UART_TxString("screen:1;time:2:15;battery:42;s1,s2,s3,s4,s5;currentlyplaying:s2;duration:4:15;#\n");
-				//UART_Printf("Buffer One : %d\r\n",result);
 			} else {
 				//Read chunk into buffer B
-				//UART_Printf("buffer 1 reading");
 				memset(buffer1, 0, sizeof buffer1);
-				//result = f_lseek(&file, counter);
 				result = f_read(&file, buffer1, sizeof buffer1, &s1);
-//				UART_TxString("screen:1;time:2:15;battery:42;s1,s2,s3,s4,s5;currentlyplaying:s2;duration:4:15;#\n");
-				//UART_Printf("Buffer Two : %d\r\n",result);
 			}
 			readit = false;
 		}
-//		ch = UART_RxChar();
-//		UART_TxChar(ch);
-//		if(ch == 'p')
-//			NVIC_DisableIRQ(TIMER0_IRQn);
 		if(!shouldParse){
-			//UART_TxString(parseString(&str));
 			parseString(&str);
 			shouldParse = true;
 		}
@@ -511,13 +447,8 @@ void initTimer0(void)
 	
 	LPC_TIM0->TCR = 0x01; //Enable timer
 }
-bool lock0 = true;
-bool lock1 = true;
 void TIMER0_IRQHandler(void) //Use extern "C" so C++ can link it properly, for C it is not required
 {
-	
-	//UART_Init(57600);
-	//UART_TxString("here");
 	LPC_TIM0->IR |= (1<<0); //Clear MR0 Interrupt flag
 	
 	
